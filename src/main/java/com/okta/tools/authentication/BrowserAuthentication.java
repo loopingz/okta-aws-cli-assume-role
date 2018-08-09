@@ -92,6 +92,9 @@ public final class BrowserAuthentication extends Application {
     }
 
     private Node getAwsStsSamlForm(Document document) {
+        if (document == null) {
+            return null;
+        }
         NodeList formNodes = document.getElementsByTagName("form");
         for (Node form : new NodeListIterable(formNodes)) {
             NamedNodeMap formAttributes = form.getAttributes();
